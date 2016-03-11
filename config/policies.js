@@ -28,7 +28,8 @@ module.exports.policies = {
 
   '*': 'tokenAuth',
   AuthController: {
-    '*': true
+    '*': true,
+    'me': 'tokenAuth'
   }
 
   /***************************************************************************

@@ -9,24 +9,6 @@ var passport = require('passport');
 
 module.exports = {
 	/**
- * Sign up in system
- * @param {Object} req Request object
- * @param {Object} res Response object
- */
-	signup: function (req, res) {
-		User
-			.create(_.omit(req.allParams(), 'id'))
-			.then(function (user) {
-				return {
-					token: JwtService.createToken(user),
-					user: user
-				};
-			})
-			.then(res.created)
-			.catch(res.serverError);
-	},
-
-	/**
 	 * Sign in by local strategy in passport
 	 * @param {Object} req Request object
 	 * @param {Object} res Response object
@@ -37,10 +19,20 @@ module.exports = {
 		  if (!user) return res.forbidden(null);
 
 		  return res.ok({
-		    token: user.createToken(),
-		    user: user
+		    token: user.createToken()
 		  });
 		})(req, res);
+	},
+	
+	/**
+	 * Retreives user from the request
+	 * @param {Object} req Request object
+	 * @param {Object} res Response object
+	 */
+	me: function (req, res) {
+		return res.ok({
+			user: req.user
+		});
 	}
 };
 
