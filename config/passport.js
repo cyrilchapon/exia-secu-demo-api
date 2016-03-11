@@ -41,7 +41,7 @@ function _onJwtStrategyAuth(payload, next) {
   
   if (!user) return next(null, false);
   
-  User.findOne({email: user.email}).exec(function (error, user) {
+  User.findOne({id: user.id}).exec(function (error, user) {
     if (error) return next(error, false);
 
     if (!user) return next(null, false);
