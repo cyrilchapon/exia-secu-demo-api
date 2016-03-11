@@ -113,14 +113,25 @@ The service exposes following APIs
     ```
     {
       token: 'OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP'
-      user: {
-        id: 12,
-        email: 'w.white@polloshermanos.us',
-        surname: 'Walter',
-        lastname: 'WHITE',
-        createdAt: '2016-03-10T16:51:47.008Z',
-        updatedAt: '2016-03-10T16:51:47.008Z'
-      }
+    }
+    ```
+  
+  - **`GET /auth/me`**
+    
+    **Access**: Open
+    
+    **Returns**: `200` or `400` or `403`
+    
+    **Response**:
+    
+    ```
+    {
+      id: 12,
+      email: 'w.white@polloshermanos.us',
+      surname: 'Walter',
+      lastname: 'WHITE',
+      createdAt: '2016-03-10T16:51:47.008Z',
+      updatedAt: '2016-03-10T16:51:47.008Z'
     }
     ```
 
