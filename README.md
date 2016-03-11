@@ -26,9 +26,12 @@ The service exposes following APIs
 
   - **`GET /user/{id}`**
     
-    Access: Open with auth token
+    **Access**: Open with auth token
     
-    Returns: `200` or `403` or `404`
+    **Returns**: `200` or `403` or `404`
+    
+    **Response**:
+    
     ```
     {
       id: 12,
@@ -42,7 +45,7 @@ The service exposes following APIs
   
   - **`POST /user`**
     
-    Access: Open with auth token
+    **Access**: Open with auth token
     
     ```
     {
@@ -53,13 +56,13 @@ The service exposes following APIs
     }
     ```
     
-    Returns: `201` or `403` or `400`
+    **Returns**: `201` or `403` or `400`
     
-    **created user is also returned just as with a `GET`*
+    **Reponse**: created user, just as with a `GET`
   
   - **`PUT /user/{id}`**
     
-    Access: Open with auth token
+    **Access**: Open with auth token
     
     ```
     {
@@ -72,23 +75,25 @@ The service exposes following APIs
     
     **only required fields*
     
-    Returns: `200` or `403` or `404` or `400`
+    **Returns**: `200` or `403` or `404` or `400`
     
-    **updated user is also returned just as with a `GET`*
+    **Response**: updated user, just as with a `GET`
   
   - **`DELETE /user/{id}`**
     
-    Access: Open with auth token
+    **Access**: Open with auth token
     
-    Returns: `200` or `403` or `404`
+    **Returns**: `200` or `403` or `404`
     
-    **deleted user is also returned just as with a `GET`*
+    **Response**: deleted user is also returned just as with a `GET`
 
 - **Auth**
   
   - **`POST /auth/signin`**
     
-    Access: Open
+    **Access**: Open
+    
+    **Request**:
     
     ```
     {
@@ -97,7 +102,10 @@ The service exposes following APIs
     }
     ```
     
-    Returns: `200` or `400` or `404`
+    **Returns**: `200` or `400` or `404`
+    
+    **Response**:
+    
     ```
     {
       token: 'OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP'
