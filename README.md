@@ -17,10 +17,12 @@ In english
 - Install node.js
 - [Install sails](http://sailsjs.org/get-started#?installation) locally
 - Clone (or fork and clone) projet
-- [`npm install`](https://docs.npmjs.com/cli/install)
-- You're up & ready to rock
+- [`npm install`](https://docs.npmjs.com/cli/install) inside projet folder
+- You're up & ready to rock =)
 
 ## APIs
+
+### RESTful endpoints
 
 The service exposes following APIs
 
@@ -121,3 +123,15 @@ The service exposes following APIs
       }
     }
     ```
+
+### Authentication
+
+Auth is performed [jwt](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) style.
+
+![jwt auth flow](http://blog.brainattica.com/content/images/2015/11/jwt_flow.png)
+
+**Steps**:
+- Authenticate with email/password couple on **`/auth/signin` endpoint**
+- Parse JSON response and find you're granted token using **`token` property** on the response ( `{token: '...'}, ...` )
+- Set **`token` HTTP header** (with received token value) on each further request, thus authenticating with this token in the process
+- (if you get a `403` on a further request, the token have been invalidated: user deleted, token expired => re-authenticate yourself)
