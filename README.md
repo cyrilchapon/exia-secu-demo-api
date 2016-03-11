@@ -8,6 +8,8 @@ One can contribute following [those guidelines](http://stackoverflow.com/questio
 
 Here's the [roadmap](ROADMAP.md)
 
+In english
+
 ## APIs
 
 The service exposes following APIs
