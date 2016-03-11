@@ -1,3 +1,3 @@
-# exia-secu-demo-api
+# Exia security demo - backend
 
-a [Sails](http://sailsjs.org) application
+This project was generated with [Sails](http://sailsjs.org)
