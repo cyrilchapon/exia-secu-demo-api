@@ -14,8 +14,9 @@ In english
 
 - Install node.js
 - [Install sails](http://sailsjs.org/get-started#?installation) locally
-- Clone projet
+- Clone (or fork and clone) projet
 - [`npm install`](https://docs.npmjs.com/cli/install)
+- You're up & ready to rock
 
 ## APIs
 
