@@ -30,9 +30,7 @@ module.exports = {
 	 * @param {Object} res Response object
 	 */
 	me: function (req, res) {
-		return res.ok({
-			user: req.user
-		});
+		return res.ok(req.user);
 	}
 };
 
