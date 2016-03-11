@@ -1,5 +1,7 @@
 # Exia security demo - backend
 
+[![Join the chat at https://gitter.im/cyrilchapon/exia-secu-demo-api](https://badges.gitter.im/cyrilchapon/exia-secu-demo-api.svg)](https://gitter.im/cyrilchapon/exia-secu-demo-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Contributing
 
 This project was generated with [Sails](http://sailsjs.org)
