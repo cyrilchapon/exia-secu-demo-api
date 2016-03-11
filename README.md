@@ -10,6 +10,13 @@ Here's the [roadmap](ROADMAP.md)
 
 In english
 
+## Installation
+
+- Install node.js
+- [Install sails](http://sailsjs.org/get-started#?installation) locally
+- Clone projet
+- [`npm install`](https://docs.npmjs.com/cli/install)
+
 ## APIs
 
 The service exposes following APIs
