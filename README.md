@@ -130,6 +130,8 @@ Auth is performed [jwt](http://self-issued.info/docs/draft-ietf-oauth-json-web-t
 
 ![jwt auth flow](http://blog.brainattica.com/content/images/2015/11/jwt_flow.png)
 
+**sequence in the image is just an illustration, not reflecting our actual api implementation here*
+
 **Steps**:
 - Authenticate with email/password couple on **`/auth/signin` endpoint**
 - Parse JSON response and find you're granted token using **`token` property** on the response ( `{token: '...'}, ...` )
