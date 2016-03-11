@@ -47,6 +47,33 @@ The service exposes following APIs
     }
     ```
   
+  - **`GET /user`**
+    
+    **Access**: Open with auth token
+    
+    **Returns**: `200` or `403`
+    
+    **Response**:
+    
+    ```
+    [{
+      id: 12,
+      email: 'w.white@polloshermanos.us',
+      surname: 'Walter',
+      lastname: 'WHITE',
+      createdAt: '2016-03-10T16:51:47.008Z',
+      updatedAt: '2016-03-10T16:51:47.008Z'
+    },
+    {
+      id: 13,
+      email: 'j.pinkman@polloshermanos.us',
+      surname: 'Jessee',
+      lastname: 'PINKMAN',
+      createdAt: '2016-03-10T17:55:03.047Z',
+      updatedAt: '2016-03-10T17:55:03.047Z'
+    }]
+    ```
+  
   - **`POST /user`**
     
     **Access**: Open with auth token
@@ -118,7 +145,7 @@ The service exposes following APIs
   
   - **`GET /auth/me`**
     
-    **Access**: Open
+    **Access**: Open with auth token
     
     **Returns**: `200` or `400` or `403`
     
