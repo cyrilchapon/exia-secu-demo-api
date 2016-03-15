@@ -16,5 +16,6 @@ ratings:
   - "*.js"
   - "api/**/*.js"
   - "config/**/*.js"
+  - "**/*.md"
 exclude_paths:
   - "api/responses/*.js"
