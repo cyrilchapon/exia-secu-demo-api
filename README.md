@@ -1,6 +1,7 @@
 # Exia security demo - backend
 
 [![Join the chat at https://gitter.im/cyrilchapon/exia-secu-demo-api](https://badges.gitter.im/cyrilchapon/exia-secu-demo-api.svg)](https://gitter.im/cyrilchapon/exia-secu-demo-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Code Climate](https://codeclimate.com/github/cyrilchapon/exia-secu-demo-api/badges/gpa.svg)](https://codeclimate.com/github/cyrilchapon/exia-secu-demo-api)
 
 ## Contributing
 
