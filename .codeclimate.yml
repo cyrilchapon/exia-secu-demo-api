@@ -1,0 +1,17 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  jshint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "*.js"
+  - "api/**/*.js"
+  - "config/**/*.js"
+exclude_paths: true
