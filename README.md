@@ -3,6 +3,8 @@
 [![Join the chat at https://gitter.im/cyrilchapon/exia-secu-demo-api](https://badges.gitter.im/cyrilchapon/exia-secu-demo-api.svg)](https://gitter.im/cyrilchapon/exia-secu-demo-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Code Climate](https://codeclimate.com/github/cyrilchapon/exia-secu-demo-api/badges/gpa.svg)](https://codeclimate.com/github/cyrilchapon/exia-secu-demo-api)
 
+This project is a backend, RESTful API server. It's intended to be coupled with [a frontend application](https://github.com/cyrilchapon/exia-secu-demo-web). The whole project is a security leak demonstration for [Grand Nord Digital Forum](http://www.grand-nord-digital-forum.com/): we're playing a "token theft" showing the matter of data encryption when it comes to HTTP.
+
 ## Contributing
 
 This project was generated with [Sails](http://sailsjs.org)
