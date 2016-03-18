@@ -50,7 +50,7 @@ module.exports = {
   },
   
   beforeCreate: function(user, next) {
-    bcrypt.hash(user.password, 10, function(err, hash) {
+    bcrypt.hash(user.password, sails.config.bcrypt.depth, function(err, hash) {
       if (err) return next(err);
       
       user.password = hash;
@@ -68,7 +68,7 @@ module.exports = {
       return next(null, user);
     }
 
-    bcrypt.hash(user.password, 10, function(err, hash) {
+    bcrypt.hash(user.password, sails.config.bcrypt.depth, function(err, hash) {
       if (err) return next(err);
 
       user.password = hash;
