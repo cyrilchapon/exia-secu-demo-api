@@ -1,3 +1,3 @@
-module.exports.connections = {
+module.exports.bcrypt = {
   depth: 10
 };
