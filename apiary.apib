@@ -43,6 +43,12 @@ showing the matter of data encryption when it comes to HTTP.
             }
         ]
 
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
 ### Find [GET /user/{id}]
 
 + Parameters
@@ -58,6 +64,18 @@ showing the matter of data encryption when it comes to HTTP.
             createdAt: '2016-03-10T16:51:47.008Z',
             updatedAt: '2016-03-10T16:51:47.008Z'
         }
+
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 404
+
+    The resource at `id` does not exist
+    
+    + Body
 
 ### Create [POST]
 
@@ -87,6 +105,18 @@ showing the matter of data encryption when it comes to HTTP.
                 updatedAt: '2016-03-10T16:51:47.008Z'
             }
 
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 400
+
+    Malformed object
+    
+    + Body
+
 ### Update [PUT]
 
 + Attributes
@@ -110,6 +140,24 @@ showing the matter of data encryption when it comes to HTTP.
             updatedAt: '2016-03-10T16:51:47.008Z'
         }
 
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 404
+
+    The resource at `id` does not exist
+    
+    + Body
+
++ Response 400
+
+    Malformed object
+    
+    + Body
+
 ### Delete [DELETE]
 
 + Response 200 (application/json)
@@ -121,3 +169,15 @@ showing the matter of data encryption when it comes to HTTP.
             createdAt: '2016-03-10T16:51:47.008Z',
             updatedAt: '2016-03-10T16:51:47.008Z'
         }
+
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 404
+
+    The resource at `id` does not exist
+    
+    + Body
