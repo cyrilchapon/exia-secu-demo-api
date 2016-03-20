@@ -9,7 +9,9 @@ The whole project is a security leak demonstration for
 Grand Nord Digital Forum: we're playing a "token theft" 
 showing the matter of data encryption when it comes to HTTP.
 
-## User [/user]
+## Users [/user]
+
+Available on `/user`
 
 + Attributes
     + id : 12 (number) - Autoincrement
@@ -21,6 +23,11 @@ showing the matter of data encryption when it comes to HTTP.
     + updatedAt: `2016-03-10T17:55:03.047Z` (string) - Automatic, ISO 8601
 
 ### List [GET /user]
+
++ Request
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
 
 + Response 200 (application/json)
 
@@ -51,6 +58,11 @@ showing the matter of data encryption when it comes to HTTP.
 
 ### Find [GET /user/{id}]
 
++ Request
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
 + Parameters
     + id : 12 (number) - User id to retrieve
 
@@ -77,17 +89,23 @@ showing the matter of data encryption when it comes to HTTP.
     
     + Body
 
-### Create [POST]
+### Create [POST /user]
 
 + Attributes
-    + email: w.white@polloshermanos.us (string, required) - Will also act as the user login
-    + password: theonewhoknocks (string, required) - Encrypted
+    + email: w.white@polloshermanos.us (string, required)
+    + password: theonewhoknocks (string, required)
     + fistname: Walter (string)
     + lastname: WHITE (string)
 
 + Request (application/x-www-form-urlencoded)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
 
 + Request (application/json)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
 
 + Response 201 (application/json)
     + Headers
@@ -117,17 +135,26 @@ showing the matter of data encryption when it comes to HTTP.
     
     + Body
 
-### Update [PUT]
+### Update [PUT /user/{id}]
+
++ Parameters
+    + id : 12 (number) - User id to retrieve
 
 + Attributes
-    + email: w.white@polloshermanos.us (string, required) - Will also act as the user login
-    + password: theonewhoknocks (string, required) - Encrypted
+    + email: w.white@polloshermanos.us (string, required)
+    + password: theonewhoknocks (string, required)
     + fistname: Walter (string)
     + lastname: WHITE (string)
 
 + Request (application/x-www-form-urlencoded)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
 
 + Request (application/json)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
 
 + Response 200 (application/json)
 
@@ -158,7 +185,15 @@ showing the matter of data encryption when it comes to HTTP.
     
     + Body
 
-### Delete [DELETE]
+### Delete [DELETE /user/{id}]
+
++ Request
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Parameters
+    + id : 12 (number) - User id to retrieve
 
 + Response 200 (application/json)
 
@@ -179,5 +214,63 @@ showing the matter of data encryption when it comes to HTTP.
 + Response 404
 
     The resource at `id` does not exist
+    
+    + Body
+
+
+
+
+## Authentication [/auth]
+
+Available on `/auth`
+
+### Sign in [POST /auth/signin]
+
++ Attributes
+    + email: w.white@polloshermanos.us (string, required)
+    + password: theonewhoknocks (string, required)
+
++ Request (application/x-www-form-urlencoded)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            token: 'OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP'
+        }
+
++ Response 404
+
+    No user exist with this `email`
+    
+    + Body
+
++ Response 400
+
+    Password does not match with user's
+    
+    + Body
+
+### Find my profile [GET /auth/me]
+
++ Request
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Response 200 (application/json)
+
+        {
+            email: 'w.white@polloshermanos.us',
+            surname: 'Walter',
+            lastname: 'WHITE',
+            createdAt: '2016-03-10T16:51:47.008Z',
+            updatedAt: '2016-03-10T16:51:47.008Z'
+        }
+
++ Response 403
+
+    This token was not granted for any user, or is not anymore
     
     + Body
