@@ -1,0 +1,123 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Exia Secu Demo
+
+Exia Secu Demo is a backend, RESTful API.
+It's intended to be coupled with a frontend application.
+The whole project is a security leak demonstration for 
+Grand Nord Digital Forum: we're playing a "token theft" 
+showing the matter of data encryption when it comes to HTTP.
+
+## User [/user]
+
++ Attributes
+    + id : 12 (number) - Autoincrement
+    + email: w.white@polloshermanos.us (string, required) - Will also act as the user login
+    + password: theonewhoknocks (string, required) - Encrypted
+    + fistname: Walter (string)
+    + lastname: WHITE (string)
+    + createdAt: `2016-03-10T16:51:47.008Z` (string) - Automatic, ISO 8601
+    + updatedAt: `2016-03-10T17:55:03.047Z` (string) - Automatic, ISO 8601
+
+### List [GET /user]
+
++ Response 200 (application/json)
+
+        [
+            {
+                id: 12,
+                email: 'w.white@polloshermanos.us',
+                surname: 'Walter',
+                lastname: 'WHITE',
+                createdAt: '2016-03-10T16:51:47.008Z',
+                updatedAt: '2016-03-10T16:51:47.008Z'
+            },
+            {
+                id: 13,
+                email: 'j.pinkman@polloshermanos.us',
+                surname: 'Jessee',
+                lastname: 'PINKMAN',
+                createdAt: '2016-03-10T17:55:03.047Z',
+                updatedAt: '2016-03-10T17:55:03.047Z'
+            }
+        ]
+
+### Find [GET /user/{id}]
+
++ Parameters
+    + id : 12 (number) - User id to retrieve
+
++ Response 200 (application/json)
+
+        {
+            id: 12,
+            email: 'w.white@polloshermanos.us',
+            surname: 'Walter',
+            lastname: 'WHITE',
+            createdAt: '2016-03-10T16:51:47.008Z',
+            updatedAt: '2016-03-10T16:51:47.008Z'
+        }
+
+### Create [POST]
+
++ Attributes
+    + email: w.white@polloshermanos.us (string, required) - Will also act as the user login
+    + password: theonewhoknocks (string, required) - Encrypted
+    + fistname: Walter (string)
+    + lastname: WHITE (string)
+
++ Request (application/x-www-form-urlencoded)
+
++ Request (application/json)
+
++ Response 201 (application/json)
+    + Headers
+
+            Location: /user/12
+
+    + Body
+    
+            {
+                id: 12,
+                email: 'w.white@polloshermanos.us',
+                surname: 'Walter',
+                lastname: 'WHITE',
+                createdAt: '2016-03-10T16:51:47.008Z',
+                updatedAt: '2016-03-10T16:51:47.008Z'
+            }
+
+### Update [PUT]
+
++ Attributes
+    + email: w.white@polloshermanos.us (string, required) - Will also act as the user login
+    + password: theonewhoknocks (string, required) - Encrypted
+    + fistname: Walter (string)
+    + lastname: WHITE (string)
+
++ Request (application/x-www-form-urlencoded)
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            id: 12,
+            email: 'w.white@polloshermanos.us',
+            surname: 'Walter',
+            lastname: 'WHITE',
+            createdAt: '2016-03-10T16:51:47.008Z',
+            updatedAt: '2016-03-10T16:51:47.008Z'
+        }
+
+### Delete [DELETE]
+
++ Response 200 (application/json)
+
+        {
+            email: 'w.white@polloshermanos.us',
+            surname: 'Walter',
+            lastname: 'WHITE',
+            createdAt: '2016-03-10T16:51:47.008Z',
+            updatedAt: '2016-03-10T16:51:47.008Z'
+        }
