@@ -29,4 +29,3 @@ The ressource must be protected by `tokenAuth` policy. It should be [default beh
 
 ## Auxiliary features
 
-Find a way to (auto)generate an [apidoc](http://apidocjs.com/) for our apis 

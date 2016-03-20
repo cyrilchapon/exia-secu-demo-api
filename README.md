@@ -13,6 +13,8 @@ One can contribute following [those guidelines](http://stackoverflow.com/questio
 
 Here's the [roadmap](ROADMAP.md)
 
+API documention uses [apiary](https://apiary.io). Every single API change MUST be reflected inside [API blueprint documentation](apiary.apib)
+
 In english
 
 ## Installation
@@ -27,143 +29,7 @@ In english
 
 ### RESTful endpoints
 
-The service exposes following APIs
-
-- **User** :
-
-  - **`GET /user/{id}`**
-    
-    **Access**: Open with auth token
-    
-    **Returns**: `200` or `403` or `404`
-    
-    **Response**:
-    
-    ```
-    {
-      id: 12,
-      email: 'w.white@polloshermanos.us',
-      surname: 'Walter',
-      lastname: 'WHITE',
-      createdAt: '2016-03-10T16:51:47.008Z',
-      updatedAt: '2016-03-10T16:51:47.008Z'
-    }
-    ```
-  
-  - **`GET /user`**
-    
-    **Access**: Open with auth token
-    
-    **Returns**: `200` or `403`
-    
-    **Response**:
-    
-    ```
-    [{
-      id: 12,
-      email: 'w.white@polloshermanos.us',
-      surname: 'Walter',
-      lastname: 'WHITE',
-      createdAt: '2016-03-10T16:51:47.008Z',
-      updatedAt: '2016-03-10T16:51:47.008Z'
-    },
-    {
-      id: 13,
-      email: 'j.pinkman@polloshermanos.us',
-      surname: 'Jessee',
-      lastname: 'PINKMAN',
-      createdAt: '2016-03-10T17:55:03.047Z',
-      updatedAt: '2016-03-10T17:55:03.047Z'
-    }]
-    ```
-  
-  - **`POST /user`**
-    
-    **Access**: Open with auth token
-    
-    ```
-    {
-      email: 'w.white@polloshermanos.us',
-      surname: 'Walter',
-      lastname: 'WHITE',
-      password: '<3skyler'
-    }
-    ```
-    
-    **Returns**: `201` or `403` or `400`
-    
-    **Reponse**: created user, just as with a `GET`
-  
-  - **`PUT /user/{id}`**
-    
-    **Access**: Open with auth token
-    
-    ```
-    {
-      email: 'w.white@polloshermanos.us',
-      surname: 'Walter',
-      lastname: 'WHITE',
-      password: 'theonewhoknocks'
-    }
-    ```
-    
-    **only required fields*
-    
-    **Returns**: `200` or `403` or `404` or `400`
-    
-    **Response**: updated user, just as with a `GET`
-  
-  - **`DELETE /user/{id}`**
-    
-    **Access**: Open with auth token
-    
-    **Returns**: `200` or `403` or `404`
-    
-    **Response**: deleted user is also returned just as with a `GET`
-
-- **Auth**
-  
-  - **`POST /auth/signin`**
-    
-    **Access**: Open
-    
-    **Request**:
-    
-    ```
-    {
-      email: 'w.white@polloshermanos.us',
-      password: 'theonewhoknocks'
-    }
-    ```
-    
-    **Returns**: `200` or `400` or `404`
-    
-    **Response**:
-    
-    ```
-    {
-      token: 'OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP'
-    }
-    ```
-  
-  - **`GET /auth/me`**
-    
-    **Access**: Open with auth token
-    
-    **Returns**: `200` or `400` or `403`
-    
-    **Response**:
-    
-    ```
-    {
-      id: 12,
-      email: 'w.white@polloshermanos.us',
-      surname: 'Walter',
-      lastname: 'WHITE',
-      createdAt: '2016-03-10T16:51:47.008Z',
-      updatedAt: '2016-03-10T16:51:47.008Z'
-    }
-    ```
+See [API doc at apiary.io](http://docs.exiasecudemo.apiary.io)
 
 ### Authentication
 
