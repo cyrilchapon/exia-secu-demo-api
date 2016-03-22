@@ -220,6 +220,196 @@ Available on `/user`
 
 
 
+## Customers [/customer]
+
+Available on `/customer`
+
++ Attributes
+    + id : 7 (number) - Autoincrement
+    + name: Los Pollos Hermanos (string, required)
+    + createdAt: `2016-08-11T03:23:08.002Z` (string) - Automatic, ISO 8601
+    + updatedAt: `2016-09-11T15:39:01.025Z` (string) - Automatic, ISO 8601
+
+### List [GET /customer]
+
++ Request
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Response 200 (application/json)
+
+        [
+            {
+                id: 7,
+                name: 'Los Pollos Hermanos',
+                createdAt: '2016-08-11T03:23:08.002Z',
+                updatedAt: '2016-09-11T15:39:01.025Z'
+            },
+            {
+                id: 8,
+                name: 'Saul Goodman Associates',
+                createdAt: '2016-08-11T18:15:16.030Z',
+                updatedAt: '2016-08-11T19:21:12.054Z'
+            }
+        ]
+
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
+### Find [GET /customer/{id}]
+
++ Request
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Parameters
+    + id : 7 (number) - Customer id to retrieve
+
++ Response 200 (application/json)
+
+        {
+            id: 7,
+            name: 'Los Pollos Hermanos',
+            createdAt: '2016-08-11T03:23:08.002Z',
+            updatedAt: '2016-09-11T15:39:01.025Z'
+        }
+
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 404
+
+    The resource at `id` does not exist
+    
+    + Body
+
+### Create [POST /customer]
+
++ Attributes
+    + name: Los Pollos Hermanos (string, required)
+
++ Request (application/x-www-form-urlencoded)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Request (application/json)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Response 201 (application/json)
+    + Headers
+
+            Location: /customer/7
+
+    + Body
+    
+            {
+                id: 7,
+                name: 'Los Pollos Hermanos',
+                createdAt: '2016-08-11T03:23:08.002Z',
+                updatedAt: '2016-09-11T15:39:01.025Z'
+            }
+
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 400
+
+    Malformed object
+    
+    + Body
+
+### Update [PUT /customer/{id}]
+
++ Parameters
+    + id : 7 (number) - Customer id to retrieve
+
++ Attributes
+    + name: Los Pollos Hermanos (string, required)
+
++ Request (application/x-www-form-urlencoded)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Request (application/json)
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Response 200 (application/json)
+
+        {
+            id: 7,
+            name: 'Los Pollos Hermanos',
+            createdAt: '2016-08-11T03:23:08.002Z',
+            updatedAt: '2016-09-11T15:39:01.025Z'
+        }
+
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 404
+
+    The resource at `id` does not exist
+    
+    + Body
+
++ Response 400
+
+    Malformed object
+    
+    + Body
+
+### Delete [DELETE /customer/{id}]
+
++ Request
+    + Headers
+
+            token: OiJzaHFkb3cifQ.255bI2f5F_GGrwc9avZP
+
++ Parameters
+    + id : 7 (number) - Customer id to retrieve
+
++ Response 200 (application/json)
+
+        {
+            name: 'Los Pollos Hermanos',
+            createdAt: '2016-08-11T03:23:08.002Z',
+            updatedAt: '2016-09-11T15:39:01.025Z'
+        }
+
++ Response 403
+
+    Provided access token is not allowed for the resource
+    
+    + Body
+
++ Response 404
+
+    The resource at `id` does not exist
+    
+    + Body
+
+
+
+
 ## Authentication [/auth]
 
 Available on `/auth`
